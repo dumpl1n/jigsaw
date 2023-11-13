@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+.pytest_cache/
+
+# Virtual environment
+bin/
+include/
+lib/
+pyvenv.cfg
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS specific
+.DS_Store
+
+# Other files/directories to consider ignoring:
+# - Personal IDE/Editor config files (e.g., .vscode/, .idea/)
+# - OS generated files (e.g., Thumbs.db on Windows)
