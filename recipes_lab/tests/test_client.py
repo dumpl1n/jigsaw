@@ -1,5 +1,6 @@
-import sys
-sys.path.append("/Users/kielay/code/jigsaw/recipes_lab")
+# import sys
+# sys.path.append("/Users/kielay/code/jigsaw/recipes_lab")
+
 import requests
 from src.client import recipe_url, main_ingredients, request_by_recipe, request_by_main_ingredient, id_url
 

@@ -1,7 +1,7 @@
-import sys
-sys.path.append("/Users/kielay/code/jigsaw/recipes_lab")
+# import sys
+# sys.path.append("/Users/kielay/code/jigsaw/recipes_lab")
 
-from src.adapter import meal_recipe, meal_names_and_ids
+from src.adapter import meal_recipe, meal_names_and_ids, find_ingredients_from, find_ingredient_measurements
 
 sample_meal = {'idMeal': '52772', 'strMeal': 'Teriyaki Chicken Casserole', 'strDrinkAlternate': None, 
 'strCategory': 'Chicken', 'strArea': 'Japanese',
@@ -21,14 +21,14 @@ def test_meal_names_and_ids():
     names_and_ids = meal_names_and_ids(sample_meals)
     assert names_and_ids == [{'name': 'Brown Stew Chicken', 'id': '52940'}, {'name': 'Chicken & mushroom Hotpot', 'id': '52846'}, {'name': 'Chicken Alfredo Primavera', 'id': '52796'}, {'name': 'Chicken Basquaise', 'id': '52934'}, {'name': 'Chicken Congee', 'id': '52956'}, {'name': 'Chicken Handi', 'id': '52795'}, {'name': 'Kentucky Fried Chicken', 'id': '52813'}, {'name': 'Kung Pao Chicken', 'id': '52945'}, {'name': 'Pad See Ew', 'id': '52774'}, {'name': 'Piri-piri chicken and slaw', 'id': '53039'}, {'name': 'Thai Green Curry', 'id': '52814'}]
 
-# def test_find_ingredients_from_returns_a_list_of_meal_ingredients():
-#     ingredients = find_ingredients_from(sample_meal)
-#     assert ingredients == ['soy sauce', 'water', 'brown sugar', 'ground ginger', 
-#     'minced garlic', 'cornstarch', 'chicken breasts', 'stir-fry vegetables', 'brown rice']
+def test_find_ingredients_from_returns_a_list_of_meal_ingredients():
+    ingredients = find_ingredients_from(sample_meal)
+    assert ingredients == ['soy sauce', 'water', 'brown sugar', 'ground ginger', 
+    'minced garlic', 'cornstarch', 'chicken breasts', 'stir-fry vegetables', 'brown rice']
 
-# def test_ingredients_and_measurements():
-#     str_ingredients = [f'strIngredient{i}' for i in range(1, 20)]
-#     ingredients = find_ingredient_measurements(sample_meal)
-#     assert ingredients == {'soy sauce': '3/4 cup', 'water': '1/2 cup', 'brown sugar': '1/4 cup',
-#      'ground ginger': '1/2 teaspoon', 'minced garlic': '1/2 teaspoon', 'brown rice': '3 cups'
-#      'cornstarch': '4 Tablespoons', 'chicken breasts': '2', 'stir-fry vegetables': '1 (12 oz.)'}
+def test_ingredients_and_measurements():
+    str_ingredients = [f'strIngredient{i}' for i in range(1, 20)]
+    ingredients = find_ingredient_measurements(sample_meal)
+    assert ingredients == {'soy sauce': '3/4 cup', 'water': '1/2 cup', 'brown sugar': '1/4 cup',
+     'ground ginger': '1/2 teaspoon', 'minced garlic': '1/2 teaspoon', 'brown rice': '3 cups',
+     'cornstarch': '4 Tablespoons', 'chicken breasts': '2', 'stir-fry vegetables': '1 (12 oz.)'}
